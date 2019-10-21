@@ -1,5 +1,6 @@
 # algolabs
-This is my algorithm labs
+This is my algorithm labs.
+
 The runnable version is at https://repl.it/@QuanDoan/AlgoLabs
 
 This repo is actually for all labs of my algorithm course. 
