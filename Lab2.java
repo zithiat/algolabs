@@ -4,16 +4,16 @@ class Lab2 {
   // Question 3
   public static void mergeTwoSorted(int[] arr1, int[] arr2) {
     int[] arr3 = new int[arr1.length + arr2.length];
-    int i = 0; 
+    int i = 0;
     int j = 0;
     int k = 0;
 
     while (i < arr1.length && j < arr2.length) {
       if (arr1[i] < arr2[j]) {
-        // first: the value will be from k and i, 
-        // then k and i will be increased by 1 
+        // first: the value will be from k and i,
+        // then k and i will be increased by 1
         // right after the execution of the line.
-        arr3[k++] = arr1[i++]; 
+        arr3[k++] = arr1[i++];
       } else {
         arr3[k++] = arr2[j++];
       }
@@ -35,7 +35,7 @@ class Lab2 {
   }
 
   // Question 8
-  // Using ArrayList, so we need to check 
+  // Using ArrayList, so we need to check
   // before insert the generated number in to the list
   // n: the number of generated array
   // k: the max range of generated numbers
@@ -71,7 +71,7 @@ class Lab2 {
   // Question 6
   // PowerSet: Time Complexity: O( 2^n )
   // This iterative is the implementation of the given algo in Lab 2.
-  // Each subset is in the order that the element appears in the input list. 
+  // Each subset is in the order that the element appears in the input list.
   // With this implementation the input is kept separately.
   public static <T> List<List<T>> powerset(Collection<T> list) {
     List<List<T>> ps = new ArrayList<List<T>>();
@@ -94,14 +94,14 @@ class Lab2 {
     }
     return ps;
   }
-  
-  // Additional approaches for the powerset. 
+
+  // Additional approaches for the powerset.
   // - Using Binary
   // - Using Recursive
   // Use the fact that numbers represented in binary can be
   // used to generate all the subsets of an array.
-  // Java's max array size is Integer.MAX_VAL, which is 2^31 - 1.  
-  // So, the max size we can handle is 30 elements, 
+  // Java's max array size is Integer.MAX_VAL, which is 2^31 - 1.
+  // So, the max size we can handle is 30 elements,
   // since the powerset will be 2^30 elements long.
   public static void powerSetUsingBinary(int[] set) {
     final int N = set.length;
@@ -120,15 +120,16 @@ class Lab2 {
     System.out.println();
   }
 
-  // Recursively generate the powerset (set of all subsets) of an array by maintaining
+  // Recursively generate the powerset (set of all subsets) of an array by
+  // maintaining
   // a boolean array used to indicate which element have been selected
-  // As each recursion call will represent subset here, 
-  // we will add resultList(see recursion code below) to 
+  // As each recursion call will represent subset here,
+  // we will add resultList(see recursion code below) to
   // the list of subsets in each call. Iterate over elements of a set.
   // In each iteration, add elements to the list
-  // explore(recursion) and make start = i + 1 
+  // explore(recursion) and make start = i + 1
   // to go through remaining elements of the array.
-  // Remove element from the list. 
+  // Remove element from the list.
   // This approach is similar to tree traversal.
   public static void powerSetRecursive(int idx, int[] set, boolean[] flags) {
     if (idx == set.length) {
@@ -137,8 +138,8 @@ class Lab2 {
       for (int i = 0; i < set.length; i++) {
         if (flags[i]) {
           System.out.print(set[i] + " ");
-        }          
-      }        
+        }
+      }
       System.out.print("]");
     } else {
       // Include this element
@@ -151,6 +152,24 @@ class Lab2 {
     }
   }
 
+  // Question 11
+  // Iteractive algorithm for Fibonacci
+  public static void fibonacci(int n) {
+    int tmp1 = 0;
+    int tmp2 = 0;
+    int result = 1;
+    if (n == 0)
+      result = 0;
+    else {
+      for (int i = 1; i <= n; i++) {
+        tmp2 = tmp1 + result;
+        tmp1 = result;
+        result = tmp2;
+      }
+    }    
+    System.out.format("Input number: %d, the Fibonacci value: %d", n, result);
+  }
+
   // Question 13
   // Assume that the given array is sorted in ascending order from left to right
   // If not sorted, use sortBinaryArray
@@ -158,11 +177,11 @@ class Lab2 {
   // lIdx = Left Index
   public static int countOnes(int[] arr, int lIdx, int rIdx) {
     // If last element of the array is 0, no 1 in the array
-    if (arr[rIdx] == 0) 
+    if (arr[rIdx] == 0)
       return 0;
     // If first element of the array is 1, return the length of the checking array
     // which is (rightIndex - leftIndex + 1)
-    if (arr[lIdx] == 1) 
+    if (arr[lIdx] == 1)
       return rIdx - lIdx + 1;
 
     // Apply divide and conquer approach and recur
@@ -191,7 +210,7 @@ class Lab2 {
     for (int i = count; i < arr.length; i++) {
       arr[i] = 1;
     }
-    
+
     // printArray(arr); // After sorting debug
     return arr;
   }
