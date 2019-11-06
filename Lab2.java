@@ -27,11 +27,11 @@ class Lab2 {
       arr3[k++] = arr2[j++];
     }
     System.out.println("Arr 1: ");
-    printArray(arr1);
+    Utils.printArray(arr1);
     System.out.println("Arr 2: ");
-    printArray(arr2);
+    Utils.printArray(arr2);
     System.out.println("Merged array: ");
-    printArray(arr3);
+    Utils.printArray(arr3);
   }
 
   // Question 8
@@ -61,15 +61,8 @@ class Lab2 {
     System.out.println(gen);
   }
 
-  public static void printArray(int[] arr) {
-    for (int i = 0; i < arr.length; i++) {
-      System.out.print(arr[i] + " ");
-    }
-    System.out.println();
-  }
-
   // Question 6
-  // PowerSet: Time Complexity: O( 2^n )
+  // PowerSet: Time Complexity: O(2^n)
   // This iterative is the implementation of the given algo in Lab 2.
   // Each subset is in the order that the element appears in the input list.
   // With this implementation the input is kept separately.
