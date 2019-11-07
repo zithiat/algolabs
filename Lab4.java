@@ -18,7 +18,7 @@ class Lab4 {
         }
       }
     }
-    Utils.printArray(arr); 
+    //Utils.printArray(arr);
   }
 
   /*
@@ -48,7 +48,7 @@ class Lab4 {
         break;
       }
     }
-    Utils.printArray(arr); 
+    //Utils.printArray(arr); 
   }
 
   /*
@@ -67,7 +67,7 @@ class Lab4 {
       //System.out.println("Effecitve array of size: " + newn);
       sortLargestLastPostion(arr, newn);
     }
-    Utils.printArray(arr);
+    //Utils.printArray(arr);
   }
 
   /*

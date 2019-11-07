@@ -3,13 +3,17 @@ import java.util.*;
 class Main {
   public static void main(String[] args) {
     // Call Lab2 exercises
-    Lab2Exercises();
+    //Lab2Exercises();
     
     // Find n-th number from Fibonacci series with various algorithms
-    Fibonacci f = new Fibonacci();
-    f.testFibonacci();
+    //Fibonacci f = new Fibonacci();
+    //f.testFibonacci();
 
-    Lab4Exercise();    
+    //Lab4Exercise();
+
+    //reverseString();
+    
+    RadixSort.runRadixSort(1000, 10000);
   }
 
   // For Lab 2 coding questions
@@ -68,7 +72,7 @@ class Main {
   public static void Lab4Exercise() {
     System.out.println();
 
-    int arrLen = 10;
+    int arrLen = 1000;
     int range = 1001;
     long start = 0;
     int[] arr = Utils.generateArray(arrLen, range);
@@ -76,25 +80,25 @@ class Main {
     int[] arr2 = Utils.generateArray(arrLen, range);
 
     System.out.println("=== Lab 4 - BubbleSort WITHOUT flag ===");
-    Utils.printArray(arr);
+    //Utils.printArray(arr);
     start = System.nanoTime();
     Lab4.bubbleSort(arr);
     long noFlagTime = System.nanoTime() - start;
-    System.out.println("Time taken: " + noFlagTime + " ms\n");
+    System.out.println("Time taken: " + noFlagTime + " ns\n");
 
     System.out.println("=== Lab 4 - BubbleSort WITH flag ===");
-    Utils.printArray(arr1);
+    //Utils.printArray(arr1);
     start = System.nanoTime();
     Lab4.bubbleSortWithFlag(arr1);
     long flagTime = System.nanoTime() - start;
-    System.out.println("Time taken: " + flagTime + " ms\n");
+    System.out.println("Time taken: " + flagTime + " ns\n");
 
     System.out.println("=== Lab 4 - BubbleSort using LARGEST IN LAST POSITION ===");
-    Utils.printArray(arr2);
+    //Utils.printArray(arr2);
     start = System.nanoTime();
     Lab4.bubbleSortUsingLastPos(arr2);
     long lastPosTime = System.nanoTime() - start;
-    System.out.println("Time taken: " + lastPosTime + " ms\n");
+    System.out.println("Time taken: " + lastPosTime + " ns\n");
 
     System.out.println("=== Lab 4 - pow(m^n) without store ===");
     start = System.nanoTime();
@@ -111,5 +115,12 @@ class Main {
     long powMNStoreTime = System.nanoTime() - start;
     System.out.println("Pow of " + m + "^" + n + " is " + powmnStore);
     System.out.println("Time taken: " + powMNStoreTime + " ms\n");
+  }
+
+  public static void reverseString() {
+    String s = "I am a robot";
+    System.out.println("Before reverse: " + s);
+    String reversed = new StringBuilder(s).reverse().toString();
+    System.out.println("After reverse: " + reversed);
   }
 }
