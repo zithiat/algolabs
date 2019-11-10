@@ -111,4 +111,34 @@ class Lab4 {
     else
       return store * store * m;
   }
+
+  public static void sort3ElementsArray(int[] arr) {
+    int counter0 = 0;
+		int counter1 = 0;
+		int counter2 = 0;
+		// Loop for counters
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] == 0) {
+				counter0++;
+			} else if (arr[i] == 1){
+				counter1++;
+			} else {
+				counter2++;
+			}
+		}
+		// Loops to arrange elements in order from left to right
+		// Starting with loop for 0
+		for (int i = 0; i < counter0; i++) {
+			arr[i] = 0;
+		}
+		// Then loop for 1
+		for (int i = counter0; i < counter0 + counter1; i++) {
+			arr[i] = 1;
+		}
+		// And loop for 2
+		for (int i = counter0 + counter1; i < counter0 + counter1 + counter2; i++) {
+			arr[i] = 2;
+		}
+    //Utils.printArray(arr);
+  }
 }

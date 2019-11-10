@@ -9,7 +9,7 @@ class Main {
     //Fibonacci f = new Fibonacci();
     //f.testFibonacci();
 
-    //Lab4Exercise();
+    Lab4Exercise();
 
     //reverseString();
     
@@ -78,6 +78,7 @@ class Main {
     int[] arr = Utils.generateArray(arrLen, range);
     int[] arr1 = Utils.generateArray(arrLen, range);
     int[] arr2 = Utils.generateArray(arrLen, range);
+    int[] arr3 = Utils.generateArray(arrLen, 3);
 
     System.out.println("=== Lab 4 - BubbleSort WITHOUT flag ===");
     //Utils.printArray(arr);
@@ -115,6 +116,12 @@ class Main {
     long powMNStoreTime = System.nanoTime() - start;
     System.out.println("Pow of " + m + "^" + n + " is " + powmnStore);
     System.out.println("Time taken: " + powMNStoreTime + " ms\n");
+
+    System.out.println("=== Lab 4 - sort {0, 1, 2} arrays ===");
+    start = System.nanoTime();
+    Lab4.sort3ElementsArray(arr3);
+    long lastSort3ElemsTime = System.nanoTime() - start;
+    System.out.println("Time taken: " + lastSort3ElemsTime + " ns\n");
   }
 
   public static void reverseString() {
