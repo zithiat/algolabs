@@ -9,11 +9,25 @@ class Main {
     //Fibonacci f = new Fibonacci();
     //f.testFibonacci();
 
-    Lab4Exercise();
+    //Lab4Exercise();
 
     //reverseString();
     
-    RadixSort.runRadixSort(1000, 10000);
+    //RadixSort.runRadixSort(1000, 10000);
+
+		//int[] arr = {1, 6, 2, 4, 3, 5};
+		//Utils.printArray(arr);
+		//QuickSort.sort(arr);
+		//Utils.printArray(arr);
+
+		//int[] arr1 = {1, 12, 8, 7, -2, -3, 6};
+		//Utils.printArray(arr1);
+		//System.out.print("Median=" + QuickSelect.findMedian(arr1));
+
+		int[] arr2 = {-10, 1, 4, 12, 8, 7, -2, -3, 6};
+		Utils.printArray(arr2);
+		System.out.print("Median=" + QuickSelect.findMedian(arr2) + "\n");
+		Utils.printArray(arr2);
   }
 
   // For Lab 2 coding questions
