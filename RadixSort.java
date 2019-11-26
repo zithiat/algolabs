@@ -3,17 +3,25 @@ import java.util.*;
 class RadixSort {
   public static void runRadixSort(int n, int range) {
     System.out.println("=== Radix Sort ===");
-    if (range <= 0) 
+    /*
+		if (range <= 0) 
       range = Integer.MAX_VALUE;
     int[] arr = Utils.generateArray(n, range);
     long start = System.nanoTime();
+		*/
+		int[] arr = {80, 1, 46, 53, 28, 55, 32, 6, 9};
     int[] sortedArr = sort(arr);
-    System.out.println("Time taken: " + (System.nanoTime() - start) + " ns for sorting " + n + " numbers");
+		System.out.println(Arrays.toString(sortedArr));
+    //System.out.println("Time taken: " + (System.nanoTime() - start) + " ns for sorting " + n + " numbers");
   }
 
   public static int[] sort(int[] input) {
-    int digitPlace = (int)Math.pow(10, Utils.findDigitNumber(Utils.findMax(input)));
-    
+		int max = Utils.findMax(input);
+		int digitNumber = Utils.findDigitNumber(max);
+		System.out.println("Max: " + max);
+		System.out.println("Digit number: " + max);
+    int digitPlace = (int)Math.pow(10, digitNumber);
+    System.out.println("Digit place: " + digitPlace);
     for (int place = 1; place <= digitPlace; place *= 10) {
       // Using counting sort at each digit place
       input = countingSort(input, place, 10); // Using base-10

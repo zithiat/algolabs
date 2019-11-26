@@ -24,10 +24,24 @@ class Main {
 		//Utils.printArray(arr1);
 		//System.out.print("Median=" + QuickSelect.findMedian(arr1));
 
-		int[] arr2 = {-10, 1, 4, 12, 8, 7, -2, -3, 6};
-		Utils.printArray(arr2);
-		System.out.print("Median=" + QuickSelect.findMedian(arr2) + "\n");
-		Utils.printArray(arr2);
+		//int[] arr2 = {-10, 1, 4, 12, 8, 7, -2, -3, 6};
+		//Utils.printArray(arr2);
+		//System.out.print("Median=" + QuickSelect.findMedian(arr2) + "\n");
+		//Utils.printArray(arr2);
+
+		//int[] arr3 = {5, 1, 4, 3, 6, 2, 7, 1, 3};
+		//Utils.printArray(arr3);
+		//System.out.print("Median=" + QuickSelect.findMedian(arr3) + "\n");
+		//Utils.printArray(arr3);
+
+		//int arr[] = {9, 10, 5, 3, 1, 2, 6};
+		int arr[] = {10, 5, 10, 1};// 5 comparisons
+		System.out.println(Arrays.toString(arr));
+		HeapSort.heapSort(arr);
+		System.out.println(Arrays.toString(arr));
+		System.out.println("CounterLeft=" + HeapSort.counterLeft);
+		System.out.println("CounterRight=" + HeapSort.counterRight);
+		System.out.println("counterNotRoot=" + HeapSort.counterNotRoot);
   }
 
   // For Lab 2 coding questions
