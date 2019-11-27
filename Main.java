@@ -35,13 +35,21 @@ class Main {
 		//Utils.printArray(arr3);
 
 		//int arr[] = {9, 10, 5, 3, 1, 2, 6};
-		int arr[] = {10, 5, 10, 1};// 5 comparisons
-		System.out.println(Arrays.toString(arr));
-		HeapSort.heapSort(arr);
-		System.out.println(Arrays.toString(arr));
-		System.out.println("CounterLeft=" + HeapSort.counterLeft);
-		System.out.println("CounterRight=" + HeapSort.counterRight);
-		System.out.println("counterNotRoot=" + HeapSort.counterNotRoot);
+		//int arr[] = {10, 5, 10, 1};// 5 comparisons
+		//System.out.println(Arrays.toString(arr));
+		//HeapSort.heapSort(arr);
+		//System.out.println(Arrays.toString(arr));
+		//System.out.println("CounterLeft=" + HeapSort.counterLeft);
+		//System.out.println("CounterRight=" + HeapSort.counterRight);
+		//System.out.println("counterNotRoot=" + HeapSort.counterNotRoot);
+
+		int[] arr = {1, 2, 17, -4, -6, 8};
+		System.out.println("Array: " + Arrays.toString(arr));
+		SortIntoPairs.runSortIntoPairs(arr); // it should be {-6, 17, -4, 8, 1, 2}
+
+		int[] arr1 = {1, 2, 17, -4, -6, 8, 5};
+		System.out.println("Array: " + Arrays.toString(arr1));
+		SortIntoPairs.runSortIntoPairs(arr1); // it should be {-6, 17, -4, 8, 1, 5, 2}
   }
 
   // For Lab 2 coding questions
