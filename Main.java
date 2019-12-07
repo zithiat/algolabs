@@ -15,10 +15,10 @@ class Main {
     
     //RadixSort.runRadixSort(1000, 10000);
 
-		//int[] arr = {1, 6, 2, 4, 3, 5};
-		//Utils.printArray(arr);
-		//QuickSort.sort(arr);
-		//Utils.printArray(arr);
+		//int[] arr1 = {1, 6, 2, 4, 3, 5};
+		//Utils.printArray(arr1);
+		//QuickSort.sort(arr1);
+		//Utils.printArray(arr1);
 
 		//int[] arr1 = {1, 12, 8, 7, -2, -3, 6};
 		//Utils.printArray(arr1);
@@ -43,13 +43,30 @@ class Main {
 		//System.out.println("CounterRight=" + HeapSort.counterRight);
 		//System.out.println("counterNotRoot=" + HeapSort.counterNotRoot);
 
-		int[] arr = {1, 2, 17, -4, -6, 8};
-		System.out.println("Array: " + Arrays.toString(arr));
-		SortIntoPairs.runSortIntoPairs(arr); // it should be {-6, 17, -4, 8, 1, 2}
+		//int[] arr = {1, 2, 17, -4, -6, 8};
+		//System.out.println("Array: " + Arrays.toString(arr));
+		//SortIntoPairs.runSortIntoPairs(arr); // it should be {-6, 17, -4, 8, 1, 2}
 
-		int[] arr1 = {1, 2, 17, -4, -6, 8, 5};
-		System.out.println("Array: " + Arrays.toString(arr1));
-		SortIntoPairs.runSortIntoPairs(arr1); // it should be {-6, 17, -4, 8, 1, 5, 2}
+		//int[] arr1 = {1, 2, 17, -4, -6, 8, 5};
+		//System.out.println("Array: " + Arrays.toString(arr1));
+		//SortIntoPairs.runSortIntoPairs(arr1); // it should be {-6, 17, -4, 8, 1, 5, 2}
+
+		//int[] arr = {12, 11, 13, 5, 6, 7};
+		//System.out.println("Array: " + Arrays.toString(arr));
+		//MergeSort.sort(arr, 0, arr.length - 1);
+		//System.out.println("Array: " + Arrays.toString(arr));
+
+		//int[] arr = {64, 25, 12, 22, 11};
+		//System.out.println("Array: " + Arrays.toString(arr));
+		//SelectionSort.sort(arr);
+		//System.out.println("Array: " + Arrays.toString(arr));
+
+		//int[] arr = {12, 11, 13, 5, 6};
+		//System.out.println("Array: " + Arrays.toString(arr));
+		//InsertionSort.sort(arr);
+		//System.out.println("Array: " + Arrays.toString(arr));
+
+		RadixSort.runRadixSort(1, 1);
   }
 
   // For Lab 2 coding questions

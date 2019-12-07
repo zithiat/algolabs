@@ -10,6 +10,7 @@ class RadixSort {
     long start = System.nanoTime();
 		*/
 		int[] arr = {80, 1, 46, 53, 28, 55, 32, 6, 9};
+		System.out.println(Arrays.toString(arr));
     int[] sortedArr = sort(arr);
 		System.out.println(Arrays.toString(sortedArr));
     //System.out.println("Time taken: " + (System.nanoTime() - start) + " ns for sorting " + n + " numbers");
@@ -25,6 +26,7 @@ class RadixSort {
     for (int place = 1; place <= digitPlace; place *= 10) {
       // Using counting sort at each digit place
       input = countingSort(input, place, 10); // Using base-10
+			System.out.println("place=" + place + "--array=" +Arrays.toString(input));
     }
     return input;
   }
@@ -47,22 +49,29 @@ class RadixSort {
     for (int i = 0; i < input.length; i++) {
       counting[Utils.getDigitValue(input[i], place)] += 1; // counting for C array
     }
+		System.out.println("counting=" + Arrays.toString(counting));
 
     // Now add up the C array to the Modifed C array
     for (int i = 1; i < counting.length; i++) {
       counting[i] += counting[i - 1];
     }
+		System.out.println("modified counting=" + Arrays.toString(counting));
 
     // Last step, starting at the end of A, add elements to B by checking 
     // the value of A[i], going to C[A[i]], writing the value of 
     // the element at A[i] to B[C[A[i]]].
     // Finally, decrement the value of C[A[i]] by 1 since that slot in B is now occupied.
     int digit = 0;
+		System.out.println("last step");
     for (int i = input.length - 1; i >= 0; i--) {
       digit = Utils.getDigitValue(input[i], place);
+			System.out.println("digit=" + digit + "--counting[digit]-1=" + (counting[digit] - 1) + "--input[i]=" + input[i]);
       output[counting[digit] - 1] = input[i]; // Since the array index starts from 0, we need to minus 1
       counting[digit]--;
+			System.out.println("updated counting=" + Arrays.toString(counting));
+			System.out.println("updated output=" + Arrays.toString(output));
     }
+		System.out.println("output=" + Arrays.toString(output));
     return output;
   }
 }
