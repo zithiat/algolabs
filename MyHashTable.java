@@ -14,12 +14,12 @@ public class MyHashTable {
 		int originalHash = hash;
 		int counter = 0;
 		if (null != table[hash])
-			System.out.println("hash=" + table[hash] + "--table[hash]=" + table[hash].getKey() + "--key=" + key);
+			System.out.println("hash=" + hash + "--table[hash]=" + table[hash].getKey() + "--key=" + key);
 		while (table[hash] != null && table[hash].getKey() != key) {
 			counter++;
 			hash = (hash + 1) % TABLE_SIZE;
 		}
-		System.out.println("originalHash=" + originalHash + " - current hash=" + hash + " - Counter for linear probes=" + counter + " for " + key);
+		System.out.println("GET originalHash=" + originalHash + " - current hash=" + hash + " - Counter for linear probes=" + counter + " for " + key);
 		System.out.println(this.toString());
 		if (table[hash] == null)
 			return -1;
@@ -38,9 +38,10 @@ public class MyHashTable {
 			hash = (hash + 1) % TABLE_SIZE;
 			counter++;
 		}
-		if (key == 59 || key == 436 || key == 95) {
-			System.out.println("originalHash=" + originalHash + " - counter for linear probes=" + counter + " for " + key);
-		}
+//		if (key == 59 || key == 436 || key == 95) {
+//			System.out.println("originalHash=" + originalHash + " - counter for linear probes=" + counter + " for " + key);
+//		}
+		System.out.println("PUT originalHash=" + originalHash + "--hash=" + hash + " - counter for linear probes=" + counter + " for " + key);
 		table[hash] = new HashEntry(key, value);
 	}
 	
@@ -56,7 +57,7 @@ public class MyHashTable {
 			counter++;
 		}
 		table[hash] = null;
-		System.out.println("originalHash=" + originalHash + " - counter for linear probes=" + counter + " for " + key);
+		System.out.println("REMOVE originalHash=" + originalHash + " - counter for linear probes=" + counter + " for " + key);
 	}
 	
 	public String toString() {
@@ -64,30 +65,30 @@ public class MyHashTable {
 		int countNotNull = 0;
 		for (int i = 0; i < TABLE_SIZE; i++) {
 			if (null != table[i]) {
-				sb.append("[" + table[i].getValue() + "]");
+				sb.append("[" + i + " - " + table[i].getValue() + "]");
 				countNotNull++;
 			}
 			else 
-				sb.append("[null]");
-			if (i != TABLE_SIZE - 1) 
-				sb.append("\t");
-			if (i % 10 == 9) 
+				sb.append("[" + i + " - null]");
+			if (i % 10 == 9)
 				sb.append("\n");
+			else 
+				sb.append("\t");
 		}
 		return sb.toString() + "\nSize not null=" + countNotNull;
 	}
 
 	public static void main(String[] args) {
-		int[] arr = {905, 159, 521, 607, 394, 783, 95, 787, 170, 144, 231, 963, 664, 408, 495, 237, 875, 714, 499, 930,
-				115, 460, 194, 720, 936, 550, 22, 202, 599, 643, 84, 59, 436};
+//		int[] arr = {905, 159, 521, 607, 394, 783, 95, 787, 170, 144, 231, 963, 664, 408, 495, 237, 875, 714, 499, 930,
+//				115, 460, 194, 720, 936, 550, 22, 202, 599, 643, 84, 59, 436};
+		int [] arr = {1, 44, 87, 130, 173, 64, 783, 95};
 		
 		MyHashTable mht = new MyHashTable();
 		for (int i = 0; i < arr.length; i++) {
 			mht.put(arr[i], arr[i]);
 		}
 		System.out.println(mht.toString());
-		System.out.println("132 in " + mht.get(132));
-		System.out.println("Remove 783");
+		System.out.println("21 in " + mht.get(21));
 		mht.remove(783);
 		System.out.println("95 in " + mht.get(95));
 	}
