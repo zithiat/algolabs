@@ -1,8 +1,7 @@
-
 public class MyLinkedList {
 	static Node head;
 	static class Node {
-		int data;
+		Integer data;
 		Node next;
 		Node(int data) {
 			this.data = data;
@@ -10,7 +9,7 @@ public class MyLinkedList {
 		}
 	}
 	
-	void toString(Node node) {
+	static void toString(Node node) {
 		while (null != node) {
 			System.out.print(node.data + " > ");
 			node = node.next;
@@ -25,9 +24,13 @@ public class MyLinkedList {
 		Node temp = null;
 		while (null != current) {
 			temp = current.next;
+			System.out.println(printNodes("temp=current.next", temp, current, prev));
 			current.next = prev;
+			System.out.println(printNodes("current.next=prev", temp, current, prev));
 			prev = current;
+			System.out.println(printNodes("prev=current", temp, current, prev));
 			current = temp;
+			System.out.println(printNodes("current=temp", temp, current, prev));
 		}
 		node = prev;
 		return node;
@@ -42,5 +45,15 @@ public class MyLinkedList {
 		mll.toString(mll.head);
 		head = mll.reverse(head);
 		mll.toString(mll.head);
+	}
+	
+	static String printNodes(String str, Node temp, Node current, Node prev) {
+		StringBuilder sb = new StringBuilder();
+		sb.append(str).append(": ");
+		sb.append("temp=").append(temp==null?"null":temp.data).append(" >> ");
+		sb.append("current=").append(current==null?"null":current.data).append(" >> ");
+		sb.append("current.next=").append(current.next==null?"null":current.next.data).append(" >> ");
+		sb.append("prev=").append(prev==null?"null":prev.data);
+		return sb.toString();
 	}
 }
