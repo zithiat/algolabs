@@ -1,5 +1,3 @@
-import java.util.*;
-
 public class InsertionSort {
 	public static void sort(int[] arr) {
 		int n = arr.length;

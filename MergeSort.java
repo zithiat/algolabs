@@ -4,9 +4,11 @@ public class MergeSort {
 	public static void sort(int[] arr, int l, int r) {
 		if (l < r) {
 			int m = (l + r) / 2;
-			System.out.println("Divide LEFT: l=" + l + "--m=" + m + "--r=" + r + "--array=" + Arrays.toString(subArray(arr, l, m)));
+			System.out.println("Divide LEFT: l=" + l + "--m=" + m + "--r=" + r + "--array="
+					+ Arrays.toString(subArray(arr, l, m)));
 			sort(arr, l, m);
-			System.out.println("Divide RIGHT: l=" + l + "--m+1=" + (m + 1) + "--r=" + r + "--array=" + Arrays.toString(subArray(arr, m + 1, r)));
+			System.out.println("Divide RIGHT: l=" + l + "--m+1=" + (m + 1) + "--r=" + r + "--array="
+					+ Arrays.toString(subArray(arr, m + 1, r)));
 			sort(arr, m + 1, r);
 
 			System.out.println("MERGE: l=" + l + "--m=" + m + "--r=" + r + "--array=" + Arrays.toString(arr));
@@ -41,7 +43,7 @@ public class MergeSort {
 			if (tmpL[i] < tmpR[j]) {
 				arr[k++] = tmpL[i++];
 			} else {
-				arr[k++] = tmpR[j++]; 
+				arr[k++] = tmpR[j++];
 			}
 		}
 		// copy remaining elements from two sub-arrays

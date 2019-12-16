@@ -15,7 +15,7 @@ public class MyStack {
 		myStack = new Stack<Integer>();
 	}
 	
-	static void push(Integer data) {
+	void push(Integer data) {
 		if (myStack.isEmpty()) {
 			min = data;
 			myStack.push(data);
@@ -32,7 +32,7 @@ public class MyStack {
 		System.out.println("Inserted: " + data);
 	}
 	
-	static void peek() {
+	void peek() {
 		if (myStack.isEmpty()) {
 			System.out.println("Stack empty");
 			return;
@@ -47,7 +47,7 @@ public class MyStack {
 		System.out.println("Top element is: " + result);
 	}
 	
-	static void pop() {
+	void pop() {
 		if (myStack.isEmpty()) {
 			System.out.println("Stack empty");
 			return;
@@ -63,7 +63,7 @@ public class MyStack {
 		System.out.println("Pop the top element removed: " + result);
 	}
 	
-	static Integer getMin() {
+	Integer getMin() {
 		if (myStack.isEmpty()) {
 			System.out.println("Stack empty");
 			return null;

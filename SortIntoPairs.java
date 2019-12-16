@@ -8,15 +8,17 @@ public class SortIntoPairs {
 	public static void runSortIntoPairs(int[] arr) {
 		int n = arr.length;
 		int[] resArr = new int[n];
-		int pairCount = n/2;
+		int pairCount = n / 2;
 		int cnt = 0;
 		for (int i = 0; i < pairCount; i++) {
-			// find the MINIMUM of the given array and fill into the first position of the pair
+			// find the MINIMUM of the given array and fill into the first position of the
+			// pair
 			resArr[i + cnt] = findMin(arr);
 			// reduce the given array by removing the found MINIMUM element
 			arr = reduceArray(arr, minIdx);
-			
-			// find the MAXIMUM of the given array and fill into the second position of the pair
+
+			// find the MAXIMUM of the given array and fill into the second position of the
+			// pair
 			resArr[i + cnt + 1] = findMax(arr);
 			// reduce the given array by removing the found MAXIMUM element
 			arr = reduceArray(arr, maxIdx);

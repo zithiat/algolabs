@@ -1,5 +1,5 @@
 public class MyLinkedList {
-	static Node head;
+	Node head;
 	static class Node {
 		Integer data;
 		Node next;
@@ -9,7 +9,7 @@ public class MyLinkedList {
 		}
 	}
 	
-	static void toString(Node node) {
+	void toString(Node node) {
 		while (null != node) {
 			System.out.print(node.data + " > ");
 			node = node.next;
@@ -18,7 +18,7 @@ public class MyLinkedList {
 			System.out.println(node);
 	}
 	
-	static Node reverse(Node node) {
+	Node reverse(Node node) {
 		Node prev = null;
 		Node current = node;
 		Node temp = null;
@@ -43,7 +43,7 @@ public class MyLinkedList {
 		mll.head.next.next = new Node(9);
 		mll.head.next.next.next = new Node(18);
 		mll.toString(mll.head);
-		head = mll.reverse(head);
+		mll.head = mll.reverse(mll.head);
 		mll.toString(mll.head);
 	}
 	

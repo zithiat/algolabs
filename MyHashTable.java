@@ -3,6 +3,24 @@ public class MyHashTable {
 	private final static int TABLE_SIZE = 43;
 	HashEntry[] table;
 
+	class HashEntry {
+		private int key;
+		private int value;
+
+		HashEntry(int key, int value) {
+			this.key = key;
+			this.value = value;
+		}
+
+		public int getKey() {
+			return key;
+		}
+
+		public int getValue() {
+			return value;
+		}
+	}
+	
 	MyHashTable() {
 		table = new HashEntry[TABLE_SIZE];
 		for (int i = 0; i < TABLE_SIZE; i++)
@@ -169,23 +187,5 @@ public class MyHashTable {
 //		mht1.removeQuadricProbing(87);
 //		System.out.println(mht1.toString());
 //		System.out.println("Get 173: " + mht1.getQuadricProbing(173));
-	}
-}
-
-class HashEntry {
-	private int key;
-	private int value;
-
-	HashEntry(int key, int value) {
-		this.key = key;
-		this.value = value;
-	}
-
-	public int getKey() {
-		return key;
-	}
-
-	public int getValue() {
-		return value;
 	}
 }
