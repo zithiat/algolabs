@@ -1,4 +1,6 @@
-
+/**
+ * Reference: https://golb.hplar.ch/2019/06/variable-length-int-java.html
+ */
 public class VariableLengthInt {
 
 	public static byte[] zigZagEncoding(int value) {
